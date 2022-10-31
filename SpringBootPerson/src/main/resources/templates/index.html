@@ -1,0 +1,22 @@
+<h2>Persons</h2>
+<table border="1" width="90%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="person : ${persons}">
+      <td th:text="${person.name}"></td>
+      <td th:text="${person.country}"></td>
+      <td><a th:href="@{/edit/{id}(id=${person.id})}">Edit</a></td>
+      <td><a th:href="@{/delete/{id}(id=${person.id})}">Delete</a></td>
+    </tr>
+  </tbody>
+</table>
+<br /><br />
+
+<a th:href="@{/addform}">Add Person</a>
